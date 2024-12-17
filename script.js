@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const menuItems = document.querySelectorAll('.menu-options li');
+    const menuSound = document.getElementById('menu-sound');
 
     let currentIndex = 0;
 
@@ -17,8 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
             currentIndex = (currentIndex - 1 + menuItems.length) % menuItems.length;
         } else if (e.key === 'Enter') {
             alert(`Has seleccionado: ${menuItems[currentIndex].innerText}`);
+            menuSound.play();
         }
         updateMenu(currentIndex);
+    });
+
+    // Manejar clic en las opciones del menú
+    menuItems.forEach((item) => {
+        item.addEventListener('click', () => {
+            menuSound.play(); // Reproducir sonido
+            alert(`Has seleccionado: ${item.innerText}`);
+        });
     });
 
     // Iniciar menú activo
