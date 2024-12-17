@@ -1,21 +1,60 @@
-/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
-   HTML content. To learn how to do something, just try searching Google for questions like
-   "how to change link color." */
+/* Fuente y estilo general */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-body {
-  content: ' ';
-  display: block;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%);
-  z-index: 100;
-  background-size: 100% 2px, 3px 100%;
-  pointer-events: none;
-  background-color: darkgray;
-  color: black;
-  font-family: Arial;
-  
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Orbitron', sans-serif;
+    color: #ff0000;
+    background: url('tu-imagen-fondo.webp') no-repeat center center fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+/* Contenedor principal */
+.menu-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6); /* Efecto semi-transparente */
+}
+
+/* Encabezado */
+.menu-header h1 {
+    margin: 0;
+    font-size: 3rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 5px #ff0000, 0 0 10px #770000;
+}
+
+.menu-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #ff5555;
+    text-shadow: 0 0 5px #ff0000;
+}
+
+/* Opciones de menú */
+.menu-options ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-options li {
+    font-size: 1.8rem;
+    margin: 15px 0;
+    cursor: pointer;
+    text-shadow: 0 0 5px #ff0000;
+    transition: all 0.3s ease;
+}
+
+.menu-options li.active,
+.menu-options li:hover {
+    color: #ffffff;
+    text-shadow: 0 0 10px #ff0000, 0 0 20px #ff3333;
+    transform: scale(1.1);
 }
